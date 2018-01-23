@@ -13,6 +13,8 @@ import './styles/styles.scss';
 const store = configureStore();
 
 store.dispatch(addTodo('Finish BBU'));
+store.dispatch(addTodo('Noice'));
+store.dispatch(addTodo('Upgrade network'));
 
 console.log(store.getState());
 

@@ -9,7 +9,7 @@ export const addTodo = (name) => {
             name: name,
             completed: false,
             id: uuid(),
-            createdAt: moment()
+            createdAt: moment().valueOf()
         }
     };
 };
