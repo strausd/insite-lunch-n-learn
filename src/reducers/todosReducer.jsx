@@ -2,9 +2,11 @@ export const todosReducer = (state = [], action) => {
     switch (action.type) {
         case 'ADD_TODO':
             return [
-                action.todo,
-                ...state
+                ...state,
+                action.todo
             ]
+        case 'DELETE_TODO':
+            return state.filter(todo => todo.id !== action.id);
         default:
             return state;
     }
