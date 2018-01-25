@@ -18,7 +18,7 @@ class TodoItem extends React.Component {
     render() {
         return (
             <div>
-                <p>{this.props.todo.name} - {this.props.todo.completed ? 'Completed' : 'Get er done'} - {moment(this.props.todo.createdAt).format("ddd, hA")}</p>
+                <p>{this.props.todo.name} - {this.props.todo.completed ? 'Completed' : 'Get er done'} - {moment(this.props.todo.createdAt).format("ddd, hh:mm a")}</p>
                 <button onClick={this.handleDeleteTodo}>Delete</button>
             </div>
         );
