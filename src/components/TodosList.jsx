@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import TodoItem from './TodoItem'
+import TodoItem from './TodoItem';
+import { filterTodos } from '../selectors/todosSelector';
 
 
 class TodoList extends React.Component {
@@ -19,7 +20,7 @@ class TodoList extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        todos: state.todos
+        todos: filterTodos(state.todos, state.filters)
     };
 }
 

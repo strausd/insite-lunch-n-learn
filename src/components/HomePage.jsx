@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import TodoList from './TodosList';
 import AddTodo from './AddTodo';
+import Filter from './Filter';
 
 
 export class HomePage extends React.Component {
@@ -13,8 +14,9 @@ export class HomePage extends React.Component {
     render() {
         return (
             <div>
-                <AddTodo />
+                <Filter />
                 <TodoList />
+                <AddTodo />
             </div>
         );
     }
