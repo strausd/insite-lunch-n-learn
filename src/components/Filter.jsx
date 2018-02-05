@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { setText } from '../actions/filterActions';
+import { setText, filterCompleted } from '../actions/filterActions';
 
 
 class Filter extends React.Component {
@@ -9,10 +9,15 @@ class Filter extends React.Component {
         super(props);
         this.props.setFilterText('');
         this.handleFilterText = this.handleFilterText.bind(this);
+        this.handleFilterComplete = this.handleFilterComplete.bind(this);
     }
 
     handleFilterText() {
         this.props.setFilterText(this.refs.filterText.value);
+    }
+
+    handleFilterComplete() {
+        this.props.filterCompleted();
     }
 
     render() {
@@ -24,6 +29,14 @@ class Filter extends React.Component {
                     placeholder="Filter"
                     onChange={this.handleFilterText}
                 />
+                <label>Toggle Show Completed</label>
+                <input
+                    name="filterComplete"
+                    ref="filterComplete"
+                    type="checkbox"
+                    onChange={this.handleFilterComplete}
+                    checked={true}
+                />
             </div>
         );
     }
@@ -31,8 +44,15 @@ class Filter extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        setFilterText: (text) => dispatch(setText(text))
+        setFilterText: (text) => dispatch(setText(text)),
+        filterCompleted: () => dispatch(filterCompleted())
     };
 };
 
-export default connect(undefined, mapDispatchToProps)(Filter);
+const mapStateToProps = (state) => {
+    return {
+        showCompleted: state.showCompleted
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Filter);

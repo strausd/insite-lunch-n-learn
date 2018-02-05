@@ -4,3 +4,9 @@ export const setText = (text) => {
         text
     };
 };
+
+export const filterCompleted = () => {
+    return {
+        type: 'FILTER_COMPLETED'
+    };
+};

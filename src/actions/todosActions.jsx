@@ -20,3 +20,10 @@ export const deleteTodo = (id) => {
         id
     };
 };
+
+export const toggleCompletedTodo = (id) => {
+    return {
+        type: 'TOGGLE_COMPLETED',
+        id
+    };
+};

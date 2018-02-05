@@ -12,6 +12,11 @@ export const filterReducer = (state = defaultState, action) => {
                 ...state,
                 text: action.text
             }
+        case 'FILTER_COMPLETED':
+            return {
+                ...state,
+                showCompleted: !state.showCompleted
+            }
         default:
             return state;
     }
