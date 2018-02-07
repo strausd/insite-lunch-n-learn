@@ -27,3 +27,12 @@ export const toggleCompletedTodo = (id) => {
         id
     };
 };
+
+export const getTodosFromLocalStorage = () => {
+    const localData = localStorage.getItem('todoState');
+    const todos = JSON.parse(localData).todos;
+    return {
+        type: 'LOAD_TODOS',
+        todos 
+    };
+};

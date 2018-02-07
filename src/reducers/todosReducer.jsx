@@ -17,6 +17,8 @@ export const todosReducer = (state = [], action) => {
                 }
                 return todo;
             });
+        case 'LOAD_TODOS':
+            return action.todos
         default:
             return state;
     }

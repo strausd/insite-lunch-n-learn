@@ -35,7 +35,7 @@ class Filter extends React.Component {
                     ref="filterComplete"
                     type="checkbox"
                     onChange={this.handleFilterComplete}
-                    checked={true}
+                    checked={this.props.showCompleted}
                 />
             </div>
         );
@@ -51,7 +51,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
     return {
-        showCompleted: state.showCompleted
+        showCompleted: state.filters.showCompleted
     };
 };
 
