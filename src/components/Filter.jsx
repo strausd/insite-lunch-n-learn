@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { DateRangePicker } from 'react-dates';
 
 import { setText, filterCompleted } from '../actions/filterActions';
 
@@ -7,9 +8,15 @@ import { setText, filterCompleted } from '../actions/filterActions';
 class Filter extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            focusedInput: null,
+            startDate: null,
+            endDate: null
+        };
         this.props.setFilterText('');
         this.handleFilterText = this.handleFilterText.bind(this);
         this.handleFilterComplete = this.handleFilterComplete.bind(this);
+        this.handleDateChange = this.handleDateChange.bind(this);
     }
 
     handleFilterText() {
@@ -18,6 +25,12 @@ class Filter extends React.Component {
 
     handleFilterComplete() {
         this.props.filterCompleted();
+    }
+
+    handleDateChange({ startDate, endDate }) {
+        console.log(startDate);
+        console.log(endDate);
+        this.setState({ startDate, endDate });
     }
 
     render() {
@@ -36,6 +49,16 @@ class Filter extends React.Component {
                     type="checkbox"
                     onChange={this.handleFilterComplete}
                     checked={this.props.showCompleted}
+                />
+                <DateRangePicker
+                    startDate={this.state.startDate} // momentPropTypes.momentObj or null,
+                    startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
+                    endDate={this.state.endDate} // momentPropTypes.momentObj or null,
+                    endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
+                    onDatesChange={ this.handleDateChange } // PropTypes.func.isRequired,
+                    focusedInput={ this.state.focusedInput } // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+                    onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
+                    isOutsideRange={() => false}
                 />
             </div>
         );
