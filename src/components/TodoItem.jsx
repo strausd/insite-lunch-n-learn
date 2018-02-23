@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { deleteTodo, toggleCompletedTodo } from '../actions/todosActions';
 
 
-class TodoItem extends React.Component {
+export class TodoItem extends React.Component {
     constructor(props) {
         super(props);
         this.handleDeleteTodo = this.handleDeleteTodo.bind(this);
@@ -23,7 +23,9 @@ class TodoItem extends React.Component {
     render() {
         return (
             <div>
-                <p className={this.props.todo.completed ? 'complete' : 'not-complete'}>{this.props.todo.name} - {this.props.todo.completed ? 'Completed' : 'Not Complete'} - {moment(this.props.todo.createdAt).format("ddd, hh:mm a")}</p>
+                <p className={this.props.todo.completed ? 'complete' : 'not-complete'}>
+                    {this.props.todo.name} - {this.props.todo.completed ? 'Completed' : 'Not Complete'} - {moment(this.props.todo.createdAt).format("MM/DD/YY")}
+                </p>
                 <button onClick={this.handleDeleteTodo}>Delete</button>
                 <button onClick={this.handleToggleComplete}>Toggle Complete</button>
             </div>

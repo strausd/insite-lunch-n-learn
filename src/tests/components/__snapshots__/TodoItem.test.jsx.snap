@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render TodoItem component properly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TodoItem
+    deleteTodo={[MockFunction]}
+    todo={
+      Object {
+        "completed": false,
+        "createdAt": 1518030833146,
+        "id": "7e53b4e2-5727-482b-8b7f-a851441b8a8b",
+        "name": "Finish BBU",
+      }
+    }
+    toggleCompleted={[MockFunction]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className="not-complete"
+        >
+          Finish BBU
+           - 
+          Not Complete
+           - 
+          02/07/18
+        </p>,
+        <button
+          onClick={[Function]}
+        >
+          Delete
+        </button>,
+        <button
+          onClick={[Function]}
+        >
+          Toggle Complete
+        </button>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Finish BBU",
+            " - ",
+            "Not Complete",
+            " - ",
+            "02/07/18",
+          ],
+          "className": "not-complete",
+        },
+        "ref": null,
+        "rendered": Array [
+          "Finish BBU",
+          " - ",
+          "Not Complete",
+          " - ",
+          "02/07/18",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Delete",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Delete",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Toggle Complete",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Toggle Complete",
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className="not-complete"
+          >
+            Finish BBU
+             - 
+            Not Complete
+             - 
+            02/07/18
+          </p>,
+          <button
+            onClick={[Function]}
+          >
+            Delete
+          </button>,
+          <button
+            onClick={[Function]}
+          >
+            Toggle Complete
+          </button>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Finish BBU",
+              " - ",
+              "Not Complete",
+              " - ",
+              "02/07/18",
+            ],
+            "className": "not-complete",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Finish BBU",
+            " - ",
+            "Not Complete",
+            " - ",
+            "02/07/18",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Delete",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Delete",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Toggle Complete",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Toggle Complete",
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

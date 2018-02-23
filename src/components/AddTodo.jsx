@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { addTodo } from '../actions/todosActions';
 
 
-class AddTodo extends React.Component {
+export class AddTodo extends React.Component {
 
     constructor(props) {
         super(props);
@@ -14,6 +14,8 @@ class AddTodo extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const todoText = this.refs.todoText.value;
+        console.log('IN HERE');
+        console.log(todoText);
         this.props.addTodo(todoText);
         this.refs.todoText.value = '';
     }

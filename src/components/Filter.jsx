@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { DateRangePicker } from 'react-dates';
 
-import { setText, filterCompleted } from '../actions/filterActions';
+import { setText, filterCompleted, filterDate } from '../actions/filterActions';
 
 
 class Filter extends React.Component {
@@ -28,9 +28,8 @@ class Filter extends React.Component {
     }
 
     handleDateChange({ startDate, endDate }) {
-        console.log(startDate);
-        console.log(endDate);
         this.setState({ startDate, endDate });
+        this.props.filterDate(startDate, endDate);
     }
 
     render() {
@@ -55,7 +54,7 @@ class Filter extends React.Component {
                     startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
                     endDate={this.state.endDate} // momentPropTypes.momentObj or null,
                     endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
-                    onDatesChange={ this.handleDateChange } // PropTypes.func.isRequired,
+                    onDatesChange={ this.handleDateChange } // PropTypes.fungggc.isRequired,
                     focusedInput={ this.state.focusedInput } // PropTypes.oneOf([START_DATE, END_DATE]) or null,
                     onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
                     isOutsideRange={() => false}
@@ -68,7 +67,8 @@ class Filter extends React.Component {
 const mapDispatchToProps = (dispatch) => {
     return {
         setFilterText: (text) => dispatch(setText(text)),
-        filterCompleted: () => dispatch(filterCompleted())
+        filterCompleted: () => dispatch(filterCompleted()),
+        filterDate: (start, end) => dispatch(filterDate(start, end))
     };
 };
 

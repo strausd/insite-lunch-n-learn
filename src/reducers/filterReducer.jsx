@@ -1,8 +1,8 @@
 const defaultState = {
     text: '',
     showCompleted: true,
-    startDate: 0,
-    endDate: 0
+    startDate: undefined,
+    endDate: undefined
 };
 
 export const filterReducer = (state = defaultState, action) => {
@@ -16,6 +16,12 @@ export const filterReducer = (state = defaultState, action) => {
             return {
                 ...state,
                 showCompleted: !state.showCompleted
+            }
+        case 'FILTER_DATE':
+            return {
+                ...state,
+                startDate: action.start,
+                endDate: action.end
             }
         default:
             return state;

@@ -10,6 +10,16 @@ export const filterTodos = (todos, filters) => {
             // Filter out this todo
             return false;
         }
+        // If this todo is not after our start date
+        if (filters.startDate && todo.createdAt < filters.startDate) {
+            // Filter out this todo
+            return false;
+        }
+        // If this todo is not before our end date
+        if (filters.endDate && todo.createdAt > filters.endDate) {
+            // Filter out this todo
+            return false;
+        }
         return true;
     });
 };

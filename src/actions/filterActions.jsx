@@ -10,3 +10,13 @@ export const filterCompleted = () => {
         type: 'FILTER_COMPLETED'
     };
 };
+
+export const filterDate = (startDate, endDate) => {
+    const start = startDate ? startDate.valueOf() : undefined;
+    const end = endDate ? endDate.valueOf() : undefined;
+    return {
+        type: 'FILTER_DATE',
+        start,
+        end
+    };
+};
