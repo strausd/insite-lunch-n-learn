@@ -14,8 +14,6 @@ export class AddTodo extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const todoText = this.refs.todoText.value;
-        console.log('IN HERE');
-        console.log(todoText);
         this.props.addTodo(todoText);
         this.refs.todoText.value = '';
     }
